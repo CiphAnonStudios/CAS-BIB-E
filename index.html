@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Display Image</title>
-
+  <title>Display Images</title>
   <style>
     body {
       margin: 0;
@@ -23,6 +22,20 @@
   </style>
 </head>
 <body>
-  <img src="2.png" alt="Image" />
+  <img id="image" src="DoesntConnect1.png" alt="Image" />
+  <script>
+    const images = [
+      "DoesntConnect1.png",
+      "DoesntConnect2.png" // Change this to your second image filename
+    ];
+
+    let currentImage = 0;
+    const image = document.getElementById("image");
+
+    setInterval(() => {
+      currentImage = (currentImage + 1) % images.length;
+      image.src = images[currentImage];
+    }, 3000); // Switches every 3 seconds
+  </script>
 </body>
 </html>
